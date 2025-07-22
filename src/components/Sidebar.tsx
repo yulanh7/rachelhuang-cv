@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 
 const sections = [
-  { id: 'hero', label: 'Home' },
+  { id: 'hero', label: 'About Me' },
   { id: 'experience', label: 'Experience' },
   { id: 'skills', label: 'Skills' },
   { id: 'education', label: 'Education' },
@@ -32,14 +32,14 @@ export default function Sidebar() {
   }, []);
 
   return (
-    <div className="fixed left-6 top-1/2 -translate-y-1/2 flex flex-col gap-4">
+    <div className="fixed left-6 top-1/2 -translate-y-1/2 flex flex-col gap-4 bg-white inset-shadow-sm p-3">
       {sections.map((section) => (
         <a
           key={section.id}
           href={`#${section.id}`}
           className={`transition-colors text-sm font-medium ${activeSection === section.id
-              ? 'text-blue-600 font-bold'
-              : 'text-gray-500 hover:text-black'
+            ? 'text-blue-600 font-bold'
+            : 'text-gray-500 hover:text-black'
             }`}
         >
           {section.label}
