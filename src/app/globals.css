@@ -22,3 +22,27 @@
 body {
   @apply bg-white text-gray-900;
 }
+
+@keyframes wave-gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  50% {
+    background-position: 100% 100%;
+  }
+
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+@layer utilities {
+  .bg-wave-gradient {
+    background: linear-gradient(135deg, #a78bfa, #60a5fa, #34d399);
+    /* 紫 → 蓝 → 绿，角度135度 */
+    background-size: 300% 300%;
+    animation: wave-gradient 6s ease-in-out infinite;
+    color: white;
+  }
+}
